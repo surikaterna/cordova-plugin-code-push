@@ -13,7 +13,7 @@ class HttpRequester implements Http.Requester {
 
     constructor(contentType?: string) {
         // Set headers for all requests
-        cordova.plugin.http.setHeader("X-CodePush-Plugin-Name", "cordova-plugin-code-push");
+        cordova.plugin.http.setHeader("X-CodePush-Plugin-Name", "native-code-push");
         cordova.plugin.http.setHeader("X-CodePush-Plugin-Version", cordova.require("cordova/plugin_list").metadata["cordova-plugin-code-push"]);
         cordova.plugin.http.setHeader("X-CodePush-SDK-Version", cordova.require("cordova/plugin_list").metadata["code-push"]);
         if (contentType) {

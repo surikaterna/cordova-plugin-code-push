@@ -24,7 +24,7 @@ var __extends = (this && this.__extends) || (function () {
 var CodePushUtil = require("./codePushUtil");
 var HttpRequester = (function () {
     function HttpRequester(contentType) {
-        cordova.plugin.http.setHeader("X-CodePush-Plugin-Name", "cordova-plugin-code-push");
+        cordova.plugin.http.setHeader("X-CodePush-Plugin-Name", "native-code-push");
         cordova.plugin.http.setHeader("X-CodePush-Plugin-Version", cordova.require("cordova/plugin_list").metadata["cordova-plugin-code-push"]);
         cordova.plugin.http.setHeader("X-CodePush-SDK-Version", cordova.require("cordova/plugin_list").metadata["code-push"]);
         if (contentType) {
