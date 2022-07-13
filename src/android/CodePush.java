@@ -570,7 +570,7 @@ public class CodePush extends CordovaPlugin {
         if (launchUrl.startsWith(wwwAssetPathPrefix)) {
             launchUrl = launchUrl.substring(wwwAssetPathPrefix.length(), launchUrlLength);
         }
-
+        launchUrl = launchUrl.replace("android_asset/www", "");
         return launchUrl;
     }
 
