@@ -24,6 +24,9 @@
   "author": "Microsoft Corporation",
   "license": "MIT",
   "types": "./typings/codePush.d.ts",
+  "scripts": {
+    "test:ios": "node --test test/ios/*.test.js"
+  },
   "devDependencies": {
     "@types/assert": "^1.4.2",
     "@types/cordova": "0.0.34",

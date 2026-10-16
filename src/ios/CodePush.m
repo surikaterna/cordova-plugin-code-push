@@ -403,6 +403,14 @@ StatusReport* rollbackStatusReport = nil;
 }
 
 - (void)loadURL:(NSURL*)url {
+    // Immediate installs reach this method from runInBackground. Keep WebKit
+    // access on main and preserve synchronous completion for the caller.
+    if (![NSThread isMainThread]) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self loadURL:url];
+        });
+        return;
+    }
 #if WK_WEB_VIEW_ONLY && defined(__CORDOVA_4_0_0)
     BOOL useUiWebView = NO;
 #else
@@ -567,4 +575,3 @@ StatusReport* rollbackStatusReport = nil;
 }
 
 @end
-

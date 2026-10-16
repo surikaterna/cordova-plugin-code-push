@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface CodePushPackageMetadata : NSObject
 
 @property NSString* deploymentKey;
